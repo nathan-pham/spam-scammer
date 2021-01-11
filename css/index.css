@@ -1,0 +1,10 @@
+#app {
+	min-height: 100vh;
+	max-width: 60rem;
+	padding: 1rem;
+}
+
+#app p {
+	font-size: 1.25rem;
+	color: var(--background);
+}
