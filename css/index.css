@@ -5,14 +5,32 @@
 	margin: 0 auto;
 }
 
-#app p {
+#app {
 	font-size: 1.25rem;
 	color: var(--background);
 }
 
-#app .generator-wrapper {
+#app button {
+	border-radius: 0.5rem;
+	border: none;
+	outline: none;
+	font-size: 1.25rem;
+	padding: 0.75rem 1rem;
+	cursor: pointer;
+	background: var(--primary);	
+	color: var(--black);
+	float: right;
+	transition: 0.2s ease filter;
+}
+
+#app button:hover {
+	filter: brightness(0.9);
+}
+
+#app .app-logs {
 	background: var(--white);
 	border-radius: 0.5rem;
+	min-height: 20rem;
 	font-size: 1.1rem;
-	
+	margin: 0 0 1rem 0;
 }

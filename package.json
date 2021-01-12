@@ -1,7 +1,7 @@
 {
   "name": "spam-scammer",
   "version": "1.0.0",
-  "description": "Make a scammer's life worse by sending them fake information",
+  "description": "Make a scammer's life worse by trying to crash their server",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

