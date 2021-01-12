@@ -24,7 +24,10 @@ const sendFakeDetails = async () => {
     const payload = fakeDetails()
     const form = new FormData()
 
-    for(const key in payload) {
+    for(const key in payload) {        
+        const input = document.getElementById(key)
+        input.value = payload[key]
+
         form.append(key, payload[key])
     }
 
