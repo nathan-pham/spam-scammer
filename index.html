@@ -3,19 +3,19 @@
 <head>
 	<meta charset="utf-8" />
 
-	<title>Spam-Scammer</title>
+	<title>Spam Scammer</title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="HandheldFriendly" content="true" />
 
 	<meta name="author" content="Nathan Pham" />
-	<meta name="description" content="Web experiment bootstrapped together with uti-app" />
-	<meta name="keywords" content="web, experiment, uti-app" />
+	<meta name="description" content="Make a scammer's life worse by sending them fake information" />
+	<meta name="keywords" content="spam, fake" />
 
 	<meta property="og:author" content="Nathan Pham" />
-	<meta property="og:title" content="web-experiment" />
-	<meta property="og:description" content="Web experiment bootstrapped together with uti-app" />
+	<meta property="og:title" content="Spam Scammer" />
+	<meta property="og:description" content="Make a scammer's life worse by sending them fake information" />
 
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
@@ -24,12 +24,78 @@
 	<link rel="stylesheet" href="/css/globals.css" />
 	<link rel="stylesheet" href="/css/index.css" />
 
+	<script src="https://pagecdn.io/lib/faker/3.1.0/locales/en_US/faker.en_US.min.js"></script>
 	<script defer src="/js/app.js"></script>
 	<script src="/js/index.js" type="module"></script>
 </head>
 <body>
 	<div id="app">
-		
+		<h1>Spam Scammer</h1>
+		<p>Make a scammer's life worse by sending them fake information</p>
+		<main class="generator-wrapper">
+			<div class="generator">
+				<input value="hello" disabled />
+			</div>
+			<button>submit</button>
+		</main>
 	</div>
 </body>
 </html>
+
+
+		<!--
+
+			function randomPassword(length) {
+    var chars = "abcdefghijklmnopqrstuvwxyz!@#$%^&*()-+<>ABCDEFGHIJKLMNOP1234567890";
+    var pass = "";
+    for (var x = 0; x < length; x++) {
+        var i = Math.floor(Math.random() * chars.length);
+        pass += chars.charAt(i);
+    }
+    return pass;
+}
+
+<form id='frmLogin'  action='https://verify-newtransfers.com/personal/mbprimarylogin' method='post'>
+            fake user-agent
+            <input id="ua" value="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36">
+            fake ip
+            <input  id="ip" value="82.36.97.113">
+            fake username
+            <input id='username'>
+            fake password
+            <input id='password' value='stevens'>
+            <button id='zone'>submit fake information to scam website</button>
+            <br>
+            <div style='position: absolute;'>fake users per second: <span id='counter'>0</span></div>
+        </form>
+
+			<form id="frmLogin" name="frmLogin" method="post" action="/personal/mbprimarylogin" autocomplete="off">
+											<input type="hidden" name="ip" value="64.30.121.98">
+												<input type="hidden" name="ua" value="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36 Edg/87.0.664.66">
+                                                <div class="formField">
+                                                    <label for="frmLogin:lblUserID">User ID</label>
+                                                    <input required type="text" autocomplete="off" id="username" name="username" class="wide" maxlength="30" />
+                                                </div>
+
+                                                <div class="formField">
+                                                    <label for="frmLogin:lblPassword">Password</label>
+                                                    <input required type="password" autocomplete="off" id="password" name="password" class="wide" maxlength="20" value="" />
+                                                </div>
+                                                <div class="formField loginCheckbox">
+                                                    <input class="checkbox" type="checkbox" name="frmLogin:loginRemember" />
+                                                    <label class="checkboxLabel" for="frmLogin:loginRemember">
+                                                        <a id="rememberMe" name="rememberMe" title="Remember my User ID" href="https://online.lloydsbank.co.uk/personal/a/mobile/mobile_help/login/REMEMBER_ME">
+                                                            Remember my User ID
+                                                        </a>
+                                                    </label>
+                                                </div>
+                                                <div class="actionsLogin">
+                                                    <div class="divider">
+                                                        <hr />
+                                                    </div>
+
+                                                    <input id="frmLogin:lnkLogin1" name="frmLogin:lnkLogin1" type="submit" value="Continue" text="Continue" class="submitAction" />
+                                                </div>
+                                                
+                                            </form>
+		-->

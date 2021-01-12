@@ -1,10 +1,18 @@
 #app {
 	min-height: 100vh;
-	max-width: 60rem;
+	max-width: 50rem;
 	padding: 1rem;
+	margin: 0 auto;
 }
 
 #app p {
 	font-size: 1.25rem;
 	color: var(--background);
+}
+
+#app .generator-wrapper {
+	background: var(--white);
+	border-radius: 0.5rem;
+	font-size: 1.1rem;
+	
 }
